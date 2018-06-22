@@ -1,17 +1,17 @@
-%æ‰§è¡Œæœºæž„éœ€è¦çš„æ˜¯æŽ§åˆ¶é‡çš„å¢žé‡ï¼Œä¾‹å¦‚é©±åŠ¨ä¸ä»…ç”µæœºçš„æ—¶å€™ï¼Œé‡‡ç”¨å¢žé‡å¼PIDæŽ§åˆ¶ï¼Œ
-%å¢žé‡å¼PIDæŽ§åˆ¶ç®—æ³•ä¸­ä¸éœ€è¦ç´¯åŠ ï¼ŒæŽ§åˆ¶å¢žé‡u(k)ä»…ä¸Žæœ€è¿‘kæ¬¡çš„é‡‡æ ·æœ‰å…³ï¼Œæ‰€ä»¥è¯¯åŠ¨ä½œå½±å“å°ã€‚
-%è®¾ä¸€è¢«æŽ§å¯¹è±¡Gï¼ˆsï¼‰=50/(0.125s^2+7s),  
-%ç”¨å¢žé‡å¼PIDæŽ§åˆ¶ç®—æ³•ç¼–å†™ä»¿çœŸç¨‹åº  
-%ï¼ˆè¾“å…¥åˆ†åˆ«ä¸ºå•ä½é˜¶è·ƒã€æ­£å¼¦ä¿¡å·ï¼Œé‡‡æ ·æ—¶é—´ä¸º1msï¼ŒæŽ§åˆ¶å™¨è¾“å‡ºé™å¹…ï¼š[-5,5],  
-%  ä»¿çœŸæ›²çº¿åŒ…æ‹¬ç³»ç»Ÿè¾“å‡ºåŠè¯¯å·®æ›²çº¿ï¼Œå¹¶åŠ ä¸Šæ³¨é‡Šã€å›¾ä¾‹ï¼‰ã€‚  
+%Ö´ÐÐ»ú¹¹ÐèÒªµÄÊÇ¿ØÖÆÁ¿µÄÔöÁ¿£¬ÀýÈçÇý¶¯²»½öµç»úµÄÊ±ºò£¬²ÉÓÃÔöÁ¿Ê½PID¿ØÖÆ£¬
+%ÔöÁ¿Ê½PID¿ØÖÆËã·¨ÖÐ²»ÐèÒªÀÛ¼Ó£¬¿ØÖÆÔöÁ¿u(k)½öÓë×î½ük´ÎµÄ²ÉÑùÓÐ¹Ø£¬ËùÒÔÎó¶¯×÷Ó°ÏìÐ¡¡£
+%ÉèÒ»±»¿Ø¶ÔÏóG£¨s£©=50/(0.125s^2+7s),  
+%ÓÃÔöÁ¿Ê½PID¿ØÖÆËã·¨±àÐ´·ÂÕæ³ÌÐò  
+%£¨ÊäÈë·Ö±ðÎªµ¥Î»½×Ô¾¡¢ÕýÏÒÐÅºÅ£¬²ÉÑùÊ±¼äÎª1ms£¬¿ØÖÆÆ÷Êä³öÏÞ·ù£º[-5,5],  
+%  ·ÂÕæÇúÏß°üÀ¨ÏµÍ³Êä³ö¼°Îó²îÇúÏß£¬²¢¼ÓÉÏ×¢ÊÍ¡¢Í¼Àý£©¡£  
   
 clc;
 clear ;     
-ts=0.001;                  %é‡‡æ ·æ—¶é—´  
-%sys=tf(50,[0.125,7, 0]);  %tfæ˜¯ä¼ é€’å‡½æ•°ï¼Œç”¨æ¥å®žçŽ°Gï¼ˆsï¼‰;  åœ¨è‡ªåŠ¨æŽ§åˆ¶é¢†åŸŸç»å¸¸ç”¨åˆ°ï¼Œ
+ts=0.001;                  %²ÉÑùÊ±¼ä  
+%sys=tf(50,[0.125,7, 0]);  %tfÊÇ´«µÝº¯Êý£¬ÓÃÀ´ÊµÏÖG£¨s£©;  ÔÚ×Ô¶¯¿ØÖÆÁìÓò¾­³£ÓÃµ½£¬
 sys=tf(400,[1,50,0]);   
-dsys=c2d(sys,ts,'z');        %æŠŠæŽ§åˆ¶å‡½æ•°ç¦»æ•£åŒ–ï¼Œè½¬åŒ–ä¸ºæ‹†åˆ†æ–¹ç¨‹
-[num,den]=tfdata(dsys,'v');  % ç¦»æ•£åŒ–åŽæå–åˆ†å­ã€åˆ†æ¯ ï¼Œæå–æ‹†åˆ†æ–¹ç¨‹ç³»æ•°   
+dsys=c2d(sys,ts,'z');        %°Ñ¿ØÖÆº¯ÊýÀëÉ¢»¯£¬×ª»¯Îª²ð·Ö·½³Ì
+[num,den]=tfdata(dsys,'v');  % ÀëÉ¢»¯ºóÌáÈ¡·Ö×Ó¡¢·ÖÄ¸ £¬ÌáÈ¡²ð·Ö·½³ÌÏµÊý   
 u_1=0.0;  
 u_2=0.0;  
 y_1=0.0;  
@@ -20,19 +20,19 @@ x=[0,0,0]';
 error_1=0;  
 error_2=0;  
 for k=1:1:3000  
-time(k)=k*ts;    %é‡‡æ ·æ¬¡æ•°  
+time(k)=k*ts;    %²ÉÑù´ÎÊý  
 
-S=4;   %é€‰æ‹©éœ€è¦è·Ÿè¸ªçš„å‡½æ•°
+S=4;   %Ñ¡ÔñÐèÒª¸ú×ÙµÄº¯Êý
 if S==1  
-   % kp=10;ki=0.1;kd=15;             %åˆå§‹åŒ–PID
+   % kp=10;ki=0.1;kd=15;             %³õÊ¼»¯PID
     kp=8;ki=0.1;kd=10;
-    rin(k)=1;            %Step Signal ï¼Œé˜¶è·ƒä¿¡å·  
+    rin(k)=1;            %Step Signal £¬½×Ô¾ÐÅºÅ  
 end
 if S==2  
     kp=10;ki=0.1;kd=15;               
-    rin(k)=0.5*sin(2*pi*k*ts);       %Sine Signal   æ­£å¼¦ä¿¡å·  
+    rin(k)=0.5*sin(2*pi*k*ts);       %Sine Signal   ÕýÏÒÐÅºÅ  
 end    
-if S==3          %ä¸‰è§’æ³¢ä¿¡å· 
+if S==3          %Èý½Ç²¨ÐÅºÅ 
      kp=10;ki=0.1;kd=15;
      if mod(time(k),2)<1
          rin(k)=mod(time(k),1);
@@ -41,15 +41,15 @@ if S==3          %ä¸‰è§’æ³¢ä¿¡å·
      end
      rin(k)=rin(k)-0.5;
 end
-if S==4     %é”¯é½¿æ³¢ä¿¡å·
-    kp=8;ki=0.05;kd=4; %æµ‹è¯•å¾—åˆé€‚å‚æ•°ï¼Œå¦‚æžœè¾“å‡ºè¿‡å†²ï¼Œå¯å°†kdè°ƒå°ã€‚
+if S==4     %¾â³Ý²¨ÐÅºÅ
+    kp=8;ki=0.05;kd=4; %²âÊÔµÃºÏÊÊ²ÎÊý£¬Èç¹ûÊä³ö¹ý³å£¬¿É½«kdµ÷Ð¡¡£
     rin(k)=mod(time(k),1);
 end
  
-du(k)=kp*x(1)+kd*x(2)+ki*x(3);      %PID Controller   æŽ§åˆ¶ç³»æ•°    
+du(k)=kp*x(1)+kd*x(2)+ki*x(3);      %PID Controller   ¿ØÖÆÏµÊý    
 u(k)=u_1+du(k); 
 
-if u(k)>=10         %Restricting the output of controllerï¼Œè¾“å‡ºé™å¹…
+if u(k)>=10         %Restricting the output of controller£¬Êä³öÏÞ·ù
    u(k)=10;  
 end  
 if u(k)<=-10  
@@ -57,12 +57,12 @@ if u(k)<=-10
 end  
 
 %Linear model  
-yout(k)=-den(2)*y_1-den(3)*y_2+num(2)*u_1+num(3)*u_2;          %å®žé™…è¾“å‡º  
-error(k)=rin(k)-yout(k);                                       %Return of parameters è¯¯å·®  
-u_2=u_1;                                                       %ä¿å­˜ä¸Šä¸Šæ¬¡è¾“å…¥   ä¸ºä¸‹æ¬¡è®¡ç®—  
-u_1=u(k);                                                      %ä¿å­˜ä¸Šä¸€æ¬¡æŽ§åˆ¶ç³»æ•°   ä¸ºä¸‹æ¬¡è®¡ç®—  
-y_2=y_1;                                                       %ä¿å­˜ä¸Šä¸Šæ¬¡æ¬¡è¾“å‡º   ä¸ºä¸‹æ¬¡è®¡ç®—  
-y_1=yout(k);                                                   %ä¿å­˜ä¸Šä¸€æ¬¡è¾“å‡º   ä¸ºä¸‹æ¬¡è®¡ç®—  
+yout(k)=-den(2)*y_1-den(3)*y_2+num(2)*u_1+num(3)*u_2;          %Êµ¼ÊÊä³ö  
+error(k)=rin(k)-yout(k);                                       %Return of parameters Îó²î  
+u_2=u_1;                                                       %±£´æÉÏÉÏ´ÎÊäÈë   ÎªÏÂ´Î¼ÆËã  
+u_1=u(k);                                                      %±£´æÉÏÒ»´Î¿ØÖÆÏµÊý   ÎªÏÂ´Î¼ÆËã  
+y_2=y_1;                                                       %±£´æÉÏÉÏ´Î´ÎÊä³ö   ÎªÏÂ´Î¼ÆËã  
+y_1=yout(k);                                                   %±£´æÉÏÒ»´ÎÊä³ö   ÎªÏÂ´Î¼ÆËã  
 
 x(1)=error(k)-error_1;            %Calculating P  
 x(2)=error(k)-2*error_1+error_2;  %Calculating D  
@@ -73,8 +73,8 @@ error_1=error(k);
 end  
 
 figure(1);  
-plot(time,rin,'b',time,yout,'r');                        %è¾“å…¥ å’Œå®žé™…æŽ§åˆ¶è¾“å‡º  
+plot(time,rin,'b',time,yout,'r');                        %ÊäÈë ºÍÊµ¼Ê¿ØÖÆÊä³ö  
 xlabel('time(s)'),ylabel('rin,yout');   
 % figure(2);  
-% plot(time,error,'r')                                     %è¾“å…¥ä¸Žè¾“å‡ºè¯¯å·®è¾“å‡ºæ›²çº¿  
+% plot(time,error,'r')                                     %ÊäÈëÓëÊä³öÎó²îÊä³öÇúÏß  
 % xlabel('time(s)');ylabel('error');  
