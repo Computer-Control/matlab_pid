@@ -2,7 +2,7 @@
 
 ### matlab 位置pid
 
-![position_pid](position_pid.jpg)
+![position_pid](position.jpg)
 
 ### matlab 增量式pid
 
